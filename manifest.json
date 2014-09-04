@@ -1,0 +1,39 @@
+{
+  "name": "Extract Images",
+  "description": "Extract current page images",
+  "version": "1.0",
+  "manifest_version": 2,
+  "icons": {
+    "128": "skin/images/icon128.png"
+  },
+  "browser_action": {
+    "default_title": "Extract Images",
+    "default_icon": {
+      "19": "skin/images/icon24.png",
+      "38": "skin/images/icon32.png"
+    },
+    "default_popup": "ui/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "lib/jquery-2.1.1.min.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "lib/jquery-2.1.1.min.js",
+        "cs/domScript.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "tabs"
+  ]
+}
